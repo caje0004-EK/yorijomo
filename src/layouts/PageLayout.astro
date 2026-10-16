@@ -1,8 +1,8 @@
 ---
 import "../styles/custom.css";
 import "../styles/general.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import header from "../components/header.astro";
+
 const { heading } = Astro.props;
 ---
 
@@ -19,9 +19,9 @@ const { heading } = Astro.props;
   </head>
 </html>
 <body>
-  <Header />
+  <header />
   <main>
     <slot />
   </main>
-  <Footer />
+  <footer />
 </body>
