@@ -1,0 +1,58 @@
+---
+const { text, href, target = "_self" } = Astro.props;
+---
+
+{
+  href ? (
+    <a href={href} target={target} class="btn-primary text-decoration-none title-sm">
+      {text}
+    </a>
+  ) : (
+    <button type="button" class="btn-primary label-md">
+      {text}
+    </button>
+  )
+}
+
+<style>
+  .btn-primary {
+    position: relative;
+
+    background-color: transparent;
+    background-image: linear-gradient(var(--chocolate-900), var(--chocolate-900));
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100% 100%;
+    background-origin: border-box;
+    background-clip: border-box;
+
+    color: var(--base-white);
+    border: var(--border-2) solid transparent;
+    border-radius: var(--radius-none);
+    padding: var(--space-8) var(--space-32);
+
+    transition:
+      background-size 600ms ease,
+      color 600ms ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: calc(var(--border-2) * -1);
+      border: var(--border-2) solid transparent;
+      border-image: var(--gradient-gold) 1;
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 600ms ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: var(--text-gold);
+      background-size: 0% 100%;
+
+      &::before {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+  }
+</style>
