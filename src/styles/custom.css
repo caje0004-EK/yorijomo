@@ -1,4 +1,75 @@
-/*
-Custom CSS
-Tilføj dine egne brugerdefinerede stilarter her
-*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Font family */
+  --font-family-headline: "Josefin Sans", sans-serif;
+  --font-family-regular: "Montserrat", sans-serif;
+
+  /* Font size */
+  --display-large-size: 72px;
+  --display-medium-size: 56px;
+  --display-medium-size: 48px;
+
+  --headline-large-size: 40px;
+  --headline-medium-size: 32px;
+  --headline-small-size: 24px;
+
+  --title-large-size: 24px;
+  --title-medium-size: 20px;
+  --title-small-size: 16px;
+
+  --label-large-size: 18px;
+  --label-medium-size: 16px;
+  --label-small-size: 14px;
+
+  --body-large-size: 16px;
+  --body-medium-size: 14px;
+  --body-small-size: 12px;
+
+  --caption-large-size: 12px;
+  --caption-medium-size: 10px;
+  --caption-small-size: 8px;
+
+  /* Font weight  */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+
+  /* line height */
+  --display-large-lineheight: 64px;
+  --display-medium-lineheight: 52px;
+  --display-medium-lineheight: 44px;
+
+  --headline-large-lineheight: 40px;
+  --headline-medium-lineheight: 36px;
+  --headline-small-lineheight: 32px;
+
+  --title-large-lineheight: 28px;
+  --title-medium-lineheight: 24px;
+  --title-small-lineheight: 20px;
+
+  --label-large-lineheight: 20px;
+  --label-medium-lineheight: 16px;
+  --label-small-lineheight: 16px;
+
+  --body-large-lineheight: 24px;
+  --body-medium-lineheight: 20px;
+  --body-small-lineheight: 16px;
+
+  --caption-large-lineheight: 16px;
+  --caption-medium-lineheight: 14px;
+  --caption-small-lineheight: 12px;
+
+  /* Letter spacing */
+  --ls-tightest: -0.025em;
+  --ls-tighter: -0.02em;
+  --ls-tight: -0.01em;
+  --ls-snug: -0.005em;
+  --ls-normal: 0;
+  --ls-wide: 0.002em;
+  --ls-wider: 0.0025em;
+  --ls-widest: 0.004em;
+}
