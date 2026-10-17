@@ -132,20 +132,6 @@
 }
 
 /* Buttons */
-.btn-primary {
-  background-color: var(--chocolate-900);
-  color: var(--base-white);
-  border: var(--border-2) solid;
-  border-radius: var(--radius-none);
-  border-color: var(--chocolate-900);
-  padding: var(space-8) var(space-32);
-
-  &:hover {
-    background-color: var(--bg-transparent);
-    color: var(--gradient-gold);
-    border-color: var(--gradient-gold);
-  }
-}
 
 .btn-secondary {
   background-color: var(--bg-transparent);
@@ -153,12 +139,12 @@
   border: var(--border-1) solid;
   border-radius: var(--radius-none);
   border-color: var(--chocolate-900);
-  padding: var(space-8) var(space-32);
+  padding: var(--space-8) var(--space-32);
 
   &:hover {
     background-color: var(--bg-transparent);
-    color: var(--gradient-gold);
-    border-color: var(--gradient-gold);
+    border-image: var(--gradient-gold) 1;
+    color: var(--text-gold);
   }
 }
 
@@ -168,7 +154,7 @@
   border: var(--border-2) solid;
   border-radius: var(--radius-none);
   border-color: var(--chocolate-900);
-  padding: var(space-8) var(space-32);
+  padding: var(--space-8) var(--space-32);
 
   &:hover {
     background-color: var(--bg-transparent);
@@ -180,9 +166,9 @@
   background-color: var(--base-white);
   color: var(--base-black);
   box-shadow: var(--elevation-1);
-  padding: var(space-8) var(space-32);
+  padding: var(--space-8) var(--space-32);
 
   &:hover {
-    color: var(--gradient-gold);
+    color: var(--text-gold);
   }
 }

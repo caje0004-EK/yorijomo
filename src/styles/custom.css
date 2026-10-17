@@ -121,6 +121,7 @@
   --base-white: rgb(251, 251, 251);
   --base-black: rgb(33, 33, 33);
   --gradient-gold: linear-gradient(90deg, rgb(219, 165, 73) 7%, rgb(239, 194, 114) 54%, rgb(219, 165, 73) 100%);
+  --text-gold: rgb(219, 165, 73);
   --bg-transparent: transparent;
 
   /* Elevation */
