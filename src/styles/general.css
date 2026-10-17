@@ -130,3 +130,59 @@
   font-family: var(font-family-regular);
   letter-spacing: var(--ls-wide);
 }
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--chocolate-900);
+  color: var(--base-white);
+  border: var(--border-2) solid;
+  border-radius: var(--radius-none);
+  border-color: var(--chocolate-900);
+  padding: var(space-8) var(space-32);
+
+  &:hover {
+    background-color: var(--bg-transparent);
+    color: var(--gradient-gold);
+    border-color: var(--gradient-gold);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--bg-transparent);
+  color: var(--chocolate-900);
+  border: var(--border-1) solid;
+  border-radius: var(--radius-none);
+  border-color: var(--chocolate-900);
+  padding: var(space-8) var(space-32);
+
+  &:hover {
+    background-color: var(--bg-transparent);
+    color: var(--gradient-gold);
+    border-color: var(--gradient-gold);
+  }
+}
+
+.btn-tertiary {
+  background-color: var(--chocolate-900);
+  color: var(--base-white);
+  border: var(--border-2) solid;
+  border-radius: var(--radius-none);
+  border-color: var(--chocolate-900);
+  padding: var(space-8) var(space-32);
+
+  &:hover {
+    background-color: var(--bg-transparent);
+    color: var(--chocolate-900);
+  }
+}
+
+.btn-quaternary {
+  background-color: var(--base-white);
+  color: var(--base-black);
+  box-shadow: var(--elevation-1);
+  padding: var(space-8) var(space-32);
+
+  &:hover {
+    color: var(--gradient-gold);
+  }
+}
