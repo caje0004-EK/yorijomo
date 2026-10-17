@@ -72,4 +72,53 @@
   --ls-wide: 0.002em;
   --ls-wider: 0.0025em;
   --ls-widest: 0.004em;
+
+  /* Colors */
+  --chocolate-900: rgb(56, 41, 28);
+  --chocolate-800: rgb(92, 68, 49);
+  --chocolate-700: rgb(118, 88, 65);
+  --chocolate-600: rgb(145, 109, 81);
+  --chocolate-500: rgb(193, 165, 141);
+  --chocolate-400: rgb(199, 150, 113);
+  --chocolate-300: rgb(224, 171, 131);
+  --chocolate-200: rgb(233, 201, 180);
+  --chocolate-100: rgb(244, 229, 221);
+  --chocolate-50: rgb(249, 242, 238);
+
+  --oat-900: rgb(39, 25, 0);
+  --oat-800: rgb(65, 45, 0);
+  --oat-700: rgb(93, 66, 0);
+  --oat-600: rgb(123, 89, 0);
+  --oat-500: rgb(154, 112, 0);
+  --oat-400: rgb(186, 136, 0);
+  --oat-300: rgb(221, 161, 0);
+  --oat-200: rgb(255, 187, 21);
+  --oat-100: rgb(255, 221, 180);
+  --oat-50: rgb(255, 239, 219);
+
+  --grey-900: rgb(37, 35, 34);
+  --grey-800: rgb(70, 68, 66);
+  --grey-700: rgb(104, 101, 98);
+  --grey-600: rgb(142, 139, 135);
+  --grey-500: rgb(180, 176, 171);
+  --grey-400: rgb(219, 216, 213);
+  --grey-300: rgb(228, 226, 224);
+  --grey-200: rgb(236, 235, 233);
+  --grey-100: rgb(247, 246, 246);
+  --grey-50: rgb(250, 249, 249);
+
+  --error-900: rgb(53, 15, 10);
+  --error-800: rgb(87, 29, 22);
+  --error-700: rgb(123, 45, 35);
+  --error-600: rgb(161, 62, 49);
+  --error-500: rgb(201, 80, 64);
+  --error-400: rgb(231, 106, 92);
+  --error-300: rgb(235, 148, 141);
+  --error-200: rgb(240, 185, 181);
+  --error-100: rgb(247, 220, 218);
+  --error-50: rgb(251, 238, 237);
+
+  --base-white: rgb(251, 251, 251);
+  --base-black: rgb(33, 33, 33);
+  --gradient-gold: linear-gradient(90deg, rgb(219, 165, 73) 7%, rgb(239, 194, 114) 54%, rgb(219, 165, 73) 100%);
 }
