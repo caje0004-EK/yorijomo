@@ -2,6 +2,7 @@
 // Header.astro
 import "../styles/struktur.css";
 import BurgerMenu from "./burgermenu.astro";
+import ShopDropdown from "./ShopDropdown.astro";
 ---
 
 <header class="navbarfixed">
@@ -25,7 +26,11 @@ import BurgerMenu from "./burgermenu.astro";
 
       <!-- Links (skjult på tablet/mobil) -->
       <div class="flex gap-lg text-decoration-none tablet-hide">
-        <a href="/shop" class="text-decoration-none">Shop</a>
+        <!-- Shop link med Dropdown Container -->
+        <div class="dropdown-parent">
+          <a href="/shop" class="text-decoration-none">Shop</a>
+          <ShopDropdown />
+        </div>
         <a href="/forhandlere" class="text-decoration-none">Forhandlere</a>
         <a href="/om-os" class="text-decoration-none">Om os</a>
       </div>
@@ -112,6 +117,20 @@ import BurgerMenu from "./burgermenu.astro";
   width: 100%;
   height: 2px;
   background-color: var(--color-dark, #000);
+}
+
+/* Dropdown hover container */
+.dropdown-parent {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+/* Viser ShopDropdown komponenten ved hover */
+.dropdown-parent:hover :global(.mega-dropdown) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Responsiv styring baseret på jeres md-breakpoint (960px) */

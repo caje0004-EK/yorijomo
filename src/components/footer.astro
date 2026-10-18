@@ -1,0 +1,276 @@
+---
+// Footer.astro
+---
+
+<footer class="site-footer">
+  <div class="container-full footer-inner">
+    
+    <!-- Billede / Instagram sektion (Ligger øverst på mobil/tablet, til højre på desktop) -->
+    <div class="footer-image-col">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-link">
+        <img src="/footer-photo.jpg" alt="Følg med på Instagram" class="footer-img" />
+        <span class="instagram-text">FØLG MED PÅ INSTAGRAM</span>
+      </a>
+    </div>
+
+    <!-- Indholds-sektion (Nyhedsbrev & Links) -->
+    <div class="footer-content-col">
+      
+      <!-- Nyhedsbrev -->
+      <div class="newsletter-section">
+        <h2 class="footer-title">TILMELD NYHEDSBREV</h2>
+        <p class="newsletter-desc">Få eksklusive tilbud og tidlig adgang til nye produkter.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="E-mail" class="footer-input" required />
+          <input type="text" placeholder="Fornavn" class="footer-input" />
+          <!-- Knappen tilpasses med CSS-variabel senere -->
+          <button type="submit" class="footer-btn">Tilmeld</button>
+        </form>
+      </div>
+
+      <!-- Navigation & Links Grid -->
+      <div class="footer-links-grid">
+        
+        <!-- SHOP -->
+        <div class="footer-col">
+          <h3 class="footer-subtitle">SHOP</h3>
+          <ul class="footer-list">
+            <li><a href="/shop/se-alle">Se alle</a></li>
+            <li><a href="/shop/nyheder">Nyheder</a></li>
+            <li><a href="/shop/sko">Sko</a></li>
+            <li><a href="/shop/baelter">Bælter</a></li>
+          </ul>
+        </div>
+
+        <!-- YORI JOMO -->
+        <div class="footer-col">
+          <h3 class="footer-subtitle">YORI JOMO</h3>
+          <ul class="footer-list">
+            <li><a href="/om-os">Om os</a></li>
+            <li><a href="/forhandlere">Forhandlere</a></li>
+          </ul>
+        </div>
+
+        <!-- KUNDESERVICE -->
+        <div class="footer-col">
+          <h3 class="footer-subtitle">KUNDESERVICE</h3>
+          <ul class="footer-list">
+            <li><a href="/returpolitik">Returpolitik</a></li>
+            <li><a href="/privatlivspolitik">Privatlivspolitik</a></li>
+            <li><a href="/handelsbetingelser">Handelsbetingelser</a></li>
+            <li><a href="/leveringspolitik">Leveringspolitik</a></li>
+            <li><a href="/juridisk-meddelelse">Juridisk meddelelse</a></li>
+            <li><a href="/vilkar">Vilkår og politikker</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTAKT -->
+        <div class="footer-col">
+          <h3 class="footer-subtitle">KONTAKT</h3>
+          <div class="footer-contact-info">
+            <a href="mailto:info@yorijomo.com">info@yorijomo.com</a>
+            <p>Jens Lillelunds Vej 1,<br>2920 Charlottenlund, Danmark</p>
+            <p>CVR: 45573281</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Copyright bunden -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 Yori Jomo</p>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  padding: 60px 20px 20px; /* Tilføjer 20px luft i venstre og højre side på mobil */
+  background-color: var(--color-bright, #fff);
+  color: var(--color-dark, #000);
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column; /* Mobil-først: Billede først, derefter indhold */
+  gap: 48px;
+}
+
+/* Instagram / Billede kolonne */
+.footer-image-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instagram-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.instagram-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Indhold kolonne */
+.footer-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Nyhedsbrev */
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.newsletter-desc {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-input {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.footer-input:focus {
+  border-color: #000;
+}
+
+.footer-btn {
+  padding: 12px 24px;
+  background-color: #2b221e; /* Midlertidig farve, erstattes af variabel */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+}
+
+/* Links Grid i footer */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.footer-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-list a,
+.footer-contact-info a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover,
+.footer-contact-info a:hover {
+  color: #000;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-contact-info p {
+  margin: 0;
+}
+
+/* Copyright bunden */
+.footer-bottom {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+/* RESPONSIVT DESIGN TIL DESKTOP (fra 960px og op) */
+@media (min-width: 960px) {
+  .footer-inner {
+    flex-direction: row-reverse; /* Billedet rykker over til højre, indhold til venstre */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .footer-image-col {
+    flex: 1;
+    max-width: 450px; /* Styrer billedets bredde på desktop */
+  }
+
+  .footer-content-col {
+    flex: 1.2;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 kolonner til links på desktop, eller tilpas efter behov */
+    gap: 40px;
+  }
+  @media (min-width: 960px) {
+  .site-footer {
+    padding: 60px 40px 20px; /* Øg evt. til 40px eller mere på desktop hvis ønsket */
+  }
+}
+}
+</style>
