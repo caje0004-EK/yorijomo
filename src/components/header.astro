@@ -5,7 +5,7 @@ import BurgerMenu from "./burgermenu.astro";
 import ShopDropdown from "./ShopDropdown.astro";
 ---
 
-<header class="navbarfixed">
+<header class="navbarfixed site-header">
   <div class="container-full flex justify-between items-center">
     
     <!-- Venstre side: Navigation -->
@@ -131,6 +131,21 @@ import ShopDropdown from "./ShopDropdown.astro";
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent; /* Gennemsigtig som standard */
+  transition: background-color 0.25s ease;
+}
+
+/* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
+.site-header:has(.dropdown-parent:hover) {
+  background-color: #ffffff;
 }
 
 /* Responsiv styring baseret på jeres md-breakpoint (960px) */

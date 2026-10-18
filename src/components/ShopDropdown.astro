@@ -121,4 +121,19 @@
   padding-left: var(--space-xl, 32px); /* Tilpas med mere margin/padding efter ønske, fx 48px eller 64px */
   padding-right: var(--space-xl, 32px);
 }
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent; /* Gennemsigtig som standard */
+  transition: background-color 0.25s ease;
+}
+
+/* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
+.site-header:has(.dropdown-parent:hover) {
+  background-color: #ffffff;
+}
 </style>

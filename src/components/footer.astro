@@ -23,16 +23,15 @@
         <form class="newsletter-form" onsubmit="event.preventDefault();">
           <input type="email" placeholder="E-mail" class="footer-input" required />
           <input type="text" placeholder="Fornavn" class="footer-input" />
-          <!-- Knappen tilpasses med CSS-variabel senere -->
           <button type="submit" class="footer-btn">Tilmeld</button>
         </form>
       </div>
 
-      <!-- Navigation & Links Grid -->
-      <div class="footer-links-grid">
+      <!-- Navigation & Links Grid (Bruger struktur.css grid) -->
+      <div class="grid m-zero">
         
         <!-- SHOP -->
-        <div class="footer-col">
+        <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">SHOP</h3>
           <ul class="footer-list">
             <li><a href="/shop/se-alle">Se alle</a></li>
@@ -43,7 +42,7 @@
         </div>
 
         <!-- YORI JOMO -->
-        <div class="footer-col">
+        <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">YORI JOMO</h3>
           <ul class="footer-list">
             <li><a href="/om-os">Om os</a></li>
@@ -52,7 +51,7 @@
         </div>
 
         <!-- KUNDESERVICE -->
-        <div class="footer-col">
+        <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">KUNDESERVICE</h3>
           <ul class="footer-list">
             <li><a href="/returpolitik">Returpolitik</a></li>
@@ -65,7 +64,7 @@
         </div>
 
         <!-- KONTAKT -->
-        <div class="footer-col">
+        <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">KONTAKT</h3>
           <div class="footer-contact-info">
             <a href="mailto:info@yorijomo.com">info@yorijomo.com</a>
@@ -88,13 +87,14 @@
 
 <style>
 .site-footer {
-  padding: 60px 20px 20px; /* Tilføjer 20px luft i venstre og højre side på mobil */
+  padding: 60px 20px 20px;
   background-color: var(--color-bright, #fff);
   color: var(--color-dark, #000);
 }
+
 .footer-inner {
   display: flex;
-  flex-direction: column; /* Mobil-først: Billede først, derefter indhold */
+  flex-direction: column;
   gap: 48px;
 }
 
@@ -176,7 +176,7 @@
 
 .footer-btn {
   padding: 12px 24px;
-  background-color: #2b221e; /* Midlertidig farve, erstattes af variabel */
+  background-color: #2b221e;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -186,13 +186,7 @@
   align-self: flex-start;
 }
 
-/* Links Grid i footer */
-.footer-links-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
+/* Links & Typografi */
 .footer-subtitle {
   font-size: 1.1rem;
   font-weight: 600;
@@ -247,8 +241,12 @@
 
 /* RESPONSIVT DESIGN TIL DESKTOP (fra 960px og op) */
 @media (min-width: 960px) {
+  .site-footer {
+    padding: 60px 40px 20px;
+  }
+
   .footer-inner {
-    flex-direction: row-reverse; /* Billedet rykker over til højre, indhold til venstre */
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
     gap: 80px;
@@ -256,21 +254,11 @@
 
   .footer-image-col {
     flex: 1;
-    max-width: 450px; /* Styrer billedets bredde på desktop */
+    max-width: 450px;
   }
 
   .footer-content-col {
     flex: 1.2;
   }
-
-  .footer-links-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 kolonner til links på desktop, eller tilpas efter behov */
-    gap: 40px;
-  }
-  @media (min-width: 960px) {
-  .site-footer {
-    padding: 60px 40px 20px; /* Øg evt. til 40px eller mere på desktop hvis ønsket */
-  }
-}
 }
 </style>
