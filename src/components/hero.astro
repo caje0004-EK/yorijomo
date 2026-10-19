@@ -1,0 +1,117 @@
+---
+// HeroCarousel.astro
+---
+
+<section class="hero-carousel">
+  <!-- Baggrunds-slides (billederne der skifter) -->
+  <div class="hero-slides">
+    <div class="hero-slide active hero-picture" style="background-image: url('/heroslider1.jpg');"></div>
+    <div class="hero-slide hero-picture" style="background-image: url('/hero-slider2.jpg');"></div>
+    <div class="hero-slide hero-picture" style="background-image: url('/heros-slider3.jpg');"></div>
+  </div>
+
+  <!-- Mørkt/tonet overlay for bedre læsbarhed af tekst -->
+  <div class="hero-overlay"></div>
+
+  <!-- Statisk indhold i midten (Overskrift, undertitel og knap) -->
+  <div class="hero-content">
+    <img class="logo" src="/Logo_Yori_Yomo%20(bihe).svg" alt="Yori Jomo">
+    <h1 class="hero-subtitle">EFTERÅRSKOLLEKTION UDE NU</h1>
+    <a href="/shop">SHOP KOLLEKTION</a>
+  </div>
+</section>
+
+<script>
+  // JavaScript til automatisk at skifte slides hvert 5. sekund
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll<HTMLElement>(".hero-slide");
+    let currentIndex = 0;
+    const intervalTime = 5000; // 5 sekunder
+
+    function nextSlide() {
+      slides[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add("active");
+    }
+
+    if (slides.length > 1) {
+      setInterval(nextSlide, intervalTime);
+    }
+  });
+</script>
+
+<style>
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fyld hele skærmens højde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Baggrunds-slides container */
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; /* Sørg for at alle som udgangspunkt er usynlige */
+  transition: opacity 1.2s ease-in-out; /* Den bløde overgang */
+}
+
+.hero-slide.active {
+  opacity: 1; /* Kun den aktive slide vises fuldt igennem */
+}
+
+/* Overlay til at dæmpe billederne en anelse */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Skift 0.25 ud med f.js. 0.4 eller 0.5 for at gøre det mørkere/mere tonet */
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 2;
+}
+
+/* Indhold placeret ovenpå karussellen */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  gap: 16px;
+}
+
+
+.hero-subtitle {
+color: #000;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-weight: 400;
+
+  
+}
+
+</style>
