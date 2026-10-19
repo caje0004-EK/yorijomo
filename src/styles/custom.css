@@ -1,4 +1,171 @@
-/*
-Custom CSS
-Tilføj dine egne brugerdefinerede stilarter her
-*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Font family */
+  --font-family-headline: "Josefin Sans", sans-serif;
+  --font-family-regular: "Montserrat", sans-serif;
+
+  /* Font size */
+  --display-large-size: 72px;
+  --display-medium-size: 56px;
+  --display-medium-size: 48px;
+
+  --headline-large-size: 40px;
+  --headline-medium-size: 32px;
+  --headline-small-size: 24px;
+
+  --title-large-size: 24px;
+  --title-medium-size: 20px;
+  --title-small-size: 16px;
+
+  --label-large-size: 18px;
+  --label-medium-size: 16px;
+  --label-small-size: 14px;
+
+  --body-large-size: 16px;
+  --body-medium-size: 14px;
+  --body-small-size: 12px;
+
+  --caption-large-size: 12px;
+  --caption-medium-size: 10px;
+  --caption-small-size: 8px;
+
+  /* Font weight  */
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+
+  /* line height */
+  --display-large-lineheight: 64px;
+  --display-medium-lineheight: 52px;
+  --display-medium-lineheight: 44px;
+
+  --headline-large-lineheight: 40px;
+  --headline-medium-lineheight: 36px;
+  --headline-small-lineheight: 32px;
+
+  --title-large-lineheight: 28px;
+  --title-medium-lineheight: 24px;
+  --title-small-lineheight: 20px;
+
+  --label-large-lineheight: 20px;
+  --label-medium-lineheight: 16px;
+  --label-small-lineheight: 16px;
+
+  --body-large-lineheight: 24px;
+  --body-medium-lineheight: 20px;
+  --body-small-lineheight: 16px;
+
+  --caption-large-lineheight: 16px;
+  --caption-medium-lineheight: 14px;
+  --caption-small-lineheight: 12px;
+
+  /* Letter spacing */
+  --ls-tightest: -0.025em;
+  --ls-tighter: -0.02em;
+  --ls-tight: -0.01em;
+  --ls-snug: -0.005em;
+  --ls-normal: 0;
+  --ls-wide: 0.002em;
+  --ls-wider: 0.0025em;
+  --ls-widest: 0.004em;
+
+  /* Colors */
+  --chocolate-900: rgb(56, 41, 28);
+  --chocolate-800: rgb(92, 68, 49);
+  --chocolate-700: rgb(118, 88, 65);
+  --chocolate-600: rgb(145, 109, 81);
+  --chocolate-500: rgb(193, 165, 141);
+  --chocolate-400: rgb(199, 150, 113);
+  --chocolate-300: rgb(224, 171, 131);
+  --chocolate-200: rgb(233, 201, 180);
+  --chocolate-100: rgb(244, 229, 221);
+  --chocolate-50: rgb(249, 242, 238);
+
+  --oat-900: rgb(39, 25, 0);
+  --oat-800: rgb(65, 45, 0);
+  --oat-700: rgb(93, 66, 0);
+  --oat-600: rgb(123, 89, 0);
+  --oat-500: rgb(154, 112, 0);
+  --oat-400: rgb(186, 136, 0);
+  --oat-300: rgb(221, 161, 0);
+  --oat-200: rgb(255, 187, 21);
+  --oat-100: rgb(255, 221, 180);
+  --oat-50: rgb(255, 239, 219);
+
+  --grey-900: rgb(37, 35, 34);
+  --grey-800: rgb(70, 68, 66);
+  --grey-700: rgb(104, 101, 98);
+  --grey-600: rgb(142, 139, 135);
+  --grey-500: rgb(180, 176, 171);
+  --grey-400: rgb(219, 216, 213);
+  --grey-300: rgb(228, 226, 224);
+  --grey-200: rgb(236, 235, 233);
+  --grey-100: rgb(247, 246, 246);
+  --grey-50: rgb(250, 249, 249);
+
+  --error-900: rgb(53, 15, 10);
+  --error-800: rgb(87, 29, 22);
+  --error-700: rgb(123, 45, 35);
+  --error-600: rgb(161, 62, 49);
+  --error-500: rgb(201, 80, 64);
+  --error-400: rgb(231, 106, 92);
+  --error-300: rgb(235, 148, 141);
+  --error-200: rgb(240, 185, 181);
+  --error-100: rgb(247, 220, 218);
+  --error-50: rgb(251, 238, 237);
+
+  --base-white: rgb(251, 251, 251);
+  --base-black: rgb(33, 33, 33);
+  --gradient-gold: linear-gradient(90deg, rgb(219, 165, 73) 7%, rgb(239, 194, 114) 54%, rgb(219, 165, 73) 100%);
+  --text-gold: rgb(219, 165, 73);
+  --bg-transparent: transparent;
+
+  /* Elevation */
+  --elevation-color: rgb(0, 0, 0);
+
+  --elevation-1: 0px 1px 2px 0px rgba(var(--shadow-color), 0.3), 0px 1px 3px 1px rgba(var(--shadow-color), 0.15);
+  --elevation-2: 0px 1px 2px 0px rgba(var(--shadow-color), 0.3), 0px 2px 6px 2px rgba(var(--shadow-color), 0.15);
+  --elevation-3: 0px 1px 3px 0px rgba(var(--shadow-color), 0.3), 0px 4px 8px 3px rgba(var(--shadow-color), 0.15);
+  --elevation-4: 0px 2px 3px 0px rgba(var(--shadow-color), 0.3), 0px 6px 10px 4px rgba(var(--shadow-color), 0.15);
+  --elevation-5: 0px 4px 4px 0px rgba(var(--shadow-color), 0.3), 0px 8px 12px 6px rgba(var(--shadow-color), 0.15);
+
+  /* Border radius */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-s: 8px;
+  --radius-md: 12px;
+  --radius-l: 16px;
+  --radius-l-inc: 20px;
+  --radius-xl: 28px;
+  --radius-xl-inc: 32px;
+  --radius-xxl: 48px;
+  --radius-full: 9999px;
+
+  /* Border width */
+  --border-none: 0;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+  --border-8: 8px;
+
+  /* Spacing */
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-88: 88px;
+  --space-96: 96px;
+  --space-104: 104px;
+  --space-112: 112px;
+  --space-120: 120px;
+}
