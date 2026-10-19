@@ -1,5 +1,5 @@
 ---
-const { text, href, target = "_self" } = Astro.props;
+const { text, href, type = "button", target = "_self" } = Astro.props;
 ---
 
 {
@@ -8,7 +8,7 @@ const { text, href, target = "_self" } = Astro.props;
       {text}
     </a>
   ) : (
-    <button type="button" class="btn-primary label-md">
+    <button type={type} class="btn-primary label-md">
       {text}
     </button>
   )
