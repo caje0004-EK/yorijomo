@@ -1,0 +1,74 @@
+---
+const { image, title, href = "#" } = Astro.props;
+---
+
+<a href={href} class="category-card">
+  <div class="category-image">
+    <img src={image} alt={title} />
+
+    <div class="category-overlay">
+      <span>SE UDVALG</span>
+    </div>
+  </div>
+
+  <p>{title}</p>
+</a>
+
+<style>
+
+  .category-card {
+    display: block;
+    text-decoration: none;
+    color:var(--grey-900);
+    padding: 20px;
+  }
+
+  .category-image {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  
+
+  .category-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .category-overlay span {
+    color:var(--base-white) ;
+    font-family: var(--font-family-headline);
+    font-size:var(--display-medium-size);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .category-card:hover .category-overlay {
+    opacity: 1;
+  }
+
+  .category-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .category-card p {
+    text-align: center;
+    margin-top:var(--space-24);
+    font-family: var(--font-family-headline);
+    font-size:var(--headline-small-size);
+    font-weight: var(--font-weight-regular);
+  }
+</style>
