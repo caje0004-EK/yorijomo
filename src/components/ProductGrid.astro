@@ -1,6 +1,6 @@
-
 ---
 import NewsCard from "./NewsCard.astro";
+import ButtonPrimary from "./ButtonPrimary.astro";
 
 const products = [
   {
@@ -39,28 +39,31 @@ const products = [
 ---
 
 <div class="product-section">
-    <h1>NYHEDER</h1>
+  <h1>NYHEDER</h1>
   <div class="product-grid">
-    {products.map((product) => (
-      <div class="product-grid-item">
-        <NewsCard {...product} />
-      </div>
-    ))}
+    {
+      products.map((product) => (
+        <div class="product-grid-item">
+          <NewsCard {...product} />
+        </div>
+      ))
+    }
   </div>
 
-  <button class="NewsButton">SHOP NYHEDER</button>
+  <div class="Button">
+    <ButtonPrimary text="SHOP NYHEDER" />
+  </div>
 </div>
 
 <style>
-
-.product-section h1{
+  .product-section h1 {
     font-family: var(--font-family-headline);
     font-weight: var(--font-weight-regular);
-    font-size:var(--headline-medium-size);
-    color:var(--grey-900);
+    font-size: var(--headline-medium-size);
+    color: var(--grey-900);
     padding: 20px;
     text-align: center;
-}
+  }
   .product-grid {
     display: grid;
     grid-auto-flow: column;
@@ -83,9 +86,8 @@ const products = [
     scroll-snap-align: start;
   }
 
-  .NewsButton {
-    display: block;
-    margin: 24px auto 0;
+  .Button {
+    place-self: center;
   }
 
   @media (min-width: 760px) and (max-width: 1199px) {
