@@ -2,7 +2,7 @@
 import CategoryCard from "./CategoryCard.astro";
 ---
 
-<div class="category">
+<div class="category slide-top">
   <h1>SHOP EFTER <span>KATEGORI</span></h1>
 
   <section class="category-grid">
@@ -40,6 +40,30 @@ import CategoryCard from "./CategoryCard.astro";
     font-size: var(--headline-large-size);
   }
 
+
+.slide-top {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.slide-top.is-visible {
+  animation: slide-top 0.7s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
   @media (min-width: 600px) {
     .category-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -51,3 +75,29 @@ import CategoryCard from "./CategoryCard.astro";
     }
   }
 </style>
+
+
+<script>
+  const animatedElements = document.querySelectorAll(".slide-top");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Start animationen
+          entry.target.classList.add("is-visible");
+        } else {
+          // Nulstil animationen, når elementet forlader skærmen
+          entry.target.classList.remove("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  animatedElements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>

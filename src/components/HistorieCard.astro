@@ -2,7 +2,7 @@
 import ButtonPrimary from "./ButtonPrimary.astro";
 ---
 
-<section class="Historie-section">
+<section class="Historie-section slide-top">
   <div class="Historie-content">
     <h1>HÅNDLAVET I <span>ITALIEN</span></h1>
     <p>Fra vores studie i København former vi sko med fokus på langtidsholdbart håndværk og ærlige materialer. Alle vores sko bliver håndlavet i Toscana, Italien, i små, begrænsede produktioner.</p>
@@ -73,6 +73,28 @@ import ButtonPrimary from "./ButtonPrimary.astro";
     display: none;
   }
 
+  .slide-top {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.slide-top.is-visible {
+  animation: slide-top 0.7s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   @media (min-width: 601px) {
     .Historie-section {
       padding: 48px 6%;
@@ -124,3 +146,29 @@ import ButtonPrimary from "./ButtonPrimary.astro";
     }
   }
 </style>
+
+
+<script>
+  const animatedElements = document.querySelectorAll(".slide-top");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Start animationen
+          entry.target.classList.add("is-visible");
+        } else {
+          // Nulstil animationen, når elementet forlader skærmen
+          entry.target.classList.remove("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  animatedElements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>
