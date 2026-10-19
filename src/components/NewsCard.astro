@@ -1,0 +1,157 @@
+
+---
+import "../styles/custom.css";
+
+const {
+  title,
+  price,
+  color,
+  image,
+  hoverImage,
+  isNew = false,
+} = Astro.props;
+---
+
+<article class="product-card">
+  <div class="product-cardImage">
+    {isNew && <span class="product-cardLabel">Nyhed</span>}
+
+    <img
+      class="product-image-default"
+      src={image}
+      alt={title}
+    />
+
+    {hoverImage && (
+      <img
+        class="product-image-hover"
+        src={hoverImage}
+        alt={`${title} - alternativ visning`}
+      />
+    )}
+  </div>
+
+  <div class="product-cardDetails">
+    <div class="product-cardTop">
+      <h2>{title}</h2>
+      <p>{price} DKK</p>
+    </div>
+
+    <p class="product-cardColor">{color}</p>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    width: 100%;
+    min-width: 0;
+    color: var(--base-black);
+  }
+
+  .product-cardImage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+
+  .product-cardImage img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-image-default {
+    opacity: 1;
+  }
+
+  .product-image-hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  .product-card:hover .product-image-default {
+    opacity: 0;
+  }
+
+  .product-card:hover .product-image-hover {
+    opacity: 1;
+  }
+
+  .product-cardLabel {
+    position: absolute;
+    top: 10px;
+    left: 34px;
+    z-index: 2;
+    width: auto;
+    padding: 8px 25px;
+    box-sizing: border-box;
+    background: var(--base-white);
+    text-align: center;
+    font-family: var(--font-family-headline);
+    font-size: 16px;
+    font-weight: var(--font-weight-light);
+  }
+
+  .product-cardDetails {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 18px;
+  }
+
+  .product-cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .product-cardTop h2,
+  .product-cardTop p {
+    margin: 0;
+    font-family: var(--font-family-regular);
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.4;
+  }
+
+  .product-cardTop h2 {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .product-cardTop p {
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: var(--grey-700);
+  }
+
+  .product-cardColor {
+    margin: 4px 0 0;
+    font-family: var(--font-family-regular);
+    font-size: 13px;
+    font-weight: var(--font-weight-light);
+    color: var(--grey-700);
+  }
+
+  @media (max-width: 760px) {
+    .product-cardTop {
+      flex-wrap: wrap;
+      gap: 2px 8px;
+    }
+
+    .product-cardTop h2,
+    .product-cardTop p {
+      font-size: 12px;
+    }
+
+    .product-cardColor {
+      font-size: 12px;
+    }
+  }
+</style>
+
+

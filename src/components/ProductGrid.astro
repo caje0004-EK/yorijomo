@@ -1,0 +1,114 @@
+
+---
+import NewsCard from "./NewsCard.astro";
+
+const products = [
+  {
+    title: "ALBA LOAFERS NAPPA",
+    price: "2200,00",
+    color: "Black",
+    image: "/Images/ALBA-Black.webp",
+    hoverImage: "/Images/ALBA-Black.webp",
+    isNew: true,
+  },
+  {
+    title: "ALBA LOAFERS NAPPA",
+    price: "2200,00",
+    color: "Merlot",
+    image: "/Images/ALBA-Merlot.webp",
+    hoverImage: "/Images/Merlot-Hover.png",
+    isNew: true,
+  },
+  {
+    title: "ALBA LOAFERS NAPPA",
+    price: "2200,00",
+    color: "Chestnut",
+    image: "/Images/ALBA-Chestnut.webp",
+    hoverImage: "/Images/Chestnut-Hover.png",
+    isNew: true,
+  },
+  {
+    title: "ALBA LOAFERS PATENT",
+    price: "2300,00",
+    color: "Patent",
+    image: "/Images/ALBA-Patent.webp",
+    hoverImage: "/Images/ALBA-Patent.webp",
+    isNew: true,
+  },
+];
+---
+
+<div class="product-section">
+    <h1>NYHEDER</h1>
+  <div class="product-grid">
+    {products.map((product) => (
+      <div class="product-grid-item">
+        <NewsCard {...product} />
+      </div>
+    ))}
+  </div>
+
+  <button class="NewsButton">SHOP NYHEDER</button>
+</div>
+
+<style>
+
+.product-section h1{
+    font-family: var(--font-family-headline);
+    font-weight: var(--font-weight-regular);
+    font-size:var(--headline-medium-size);
+    color:var(--grey-900);
+    padding: 20px;
+    text-align: center;
+}
+  .product-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 8px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-grid-item {
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .NewsButton {
+    display: block;
+    margin: 24px auto 0;
+  }
+
+  @media (min-width: 760px) and (max-width: 1199px) {
+    .product-grid {
+      grid-auto-flow: row;
+      grid-auto-columns: auto;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+
+    .product-grid-item:nth-child(n + 4) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .product-grid {
+      grid-auto-flow: row;
+      grid-auto-columns: auto;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+  }
+</style>

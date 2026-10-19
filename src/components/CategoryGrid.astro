@@ -1,0 +1,55 @@
+
+---
+import CategoryCard from "./CategoryCard.astro";
+---
+
+<div class="category">
+  <h1>SHOP EFTER <span>KATEGORI</span></h1>
+
+  <section class="category-grid">
+    <CategoryCard image="/Images/Shoes.png" title="SKO" href="#" />
+    <CategoryCard image="/Images/Belt.png" title="BÆLTER" href="#" />
+  </section>
+</div>
+
+<style>
+  .category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .category-heading {
+    text-align: center;
+    margin: 0 0 4px;
+    font-size:var(--title-medium-size);
+    font-weight:var(--font-weight-regular);
+  }
+
+  .category h1 {
+    font-family: var(--font-family-headline);
+    font-size: var(--headline-medium-size);
+    font-weight: var(--font-weight-regular);
+    margin: 20px 0 16px;
+    color: var(--grey-900);
+    text-align: center;
+  }
+
+  .category h1 span {
+    color: var(--oat-500);
+    font-size: var(--headline-large-size);
+  }
+
+  @media (min-width: 600px) {
+    .category-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px 16px;
+    }
+
+    .category-heading {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
+
