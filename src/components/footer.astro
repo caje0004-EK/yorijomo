@@ -5,6 +5,8 @@ import ButtonPrimary from "./ButtonPrimary.astro";
 
 <footer class="site-footer">
   <div class="container-full footer-inner">
+    
+   
     <!-- Billede / Instagram sektion (Ligger øverst på mobil/tablet, til højre på desktop) -->
     <div class="footer-image-col">
       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-link">
@@ -13,8 +15,10 @@ import ButtonPrimary from "./ButtonPrimary.astro";
       </a>
     </div>
 
-    <!-- Indholds-sektion (Nyhedsbrev & Links) -->
+    <!-- Indholds-sektion -->
     <div class="footer-content-col">
+      
+      <!-- Nyhedsbrev section-->
       <!-- Nyhedsbrev -->
       <div class="newsletter-section">
         <h2 class="footer-title">TILMELD NYHEDSBREV</h2>
@@ -28,8 +32,10 @@ import ButtonPrimary from "./ButtonPrimary.astro";
         </form>
       </div>
 
-      <!-- Navigation & Links Grid (Bruger struktur.css grid) -->
+      <!-- Navigation & Links section-->
       <div class="grid m-zero">
+        
+        <!-- SHOP section-->
         <!-- SHOP -->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">SHOP</h3>
@@ -41,7 +47,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
           </ul>
         </div>
 
-        <!-- YORI JOMO -->
+        <!-- YORI JOMO section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">YORI JOMO</h3>
           <ul class="footer-list">
@@ -50,7 +56,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
           </ul>
         </div>
 
-        <!-- KUNDESERVICE -->
+        <!-- KUNDESERVICE section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">KUNDESERVICE</h3>
           <ul class="footer-list">
@@ -63,7 +69,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
           </ul>
         </div>
 
-        <!-- KONTAKT -->
+        <!-- KONTAKT section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">KONTAKT</h3>
           <div class="footer-contact-info">
@@ -76,13 +82,172 @@ import ButtonPrimary from "./ButtonPrimary.astro";
     </div>
   </div>
 
-  <!-- Copyright bunden -->
+  <!-- Copyright section -->
   <div class="footer-bottom">
     <p>&copy; 2026 Yori Jomo</p>
   </div>
 </footer>
 
 <style>
+.site-footer {
+  font-family: var(--font-family-regular);
+  padding: 60px 20px 20px;
+  background-color: var(--color-bright, #fff);
+  color: var(--color-dark, #000);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Instagram link*/
+.footer-image-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instagram-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.instagram-text {
+  font-family: var(--font-family-headline);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Indhold kolonne */
+.footer-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Nyhedsbrev */
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+
+.footer-title {
+  font-family: var(--font-family-headline);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.newsletter-desc {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-input {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.footer-input:focus {
+  border-color: #000;
+}
+
+.footer-btn {
+  padding: 12px 24px;
+  background-color: #2b221e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+}
+
+/* Links & Typografi */
+.footer-subtitle {
+  font-family: var(--font-family-headline);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-list a,
+.footer-contact-info a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover,
+.footer-contact-info a:hover {
+  color: #000;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-contact-info p {
+  margin: 0;
+}
+
+/* Copyright bunden */
+.footer-bottom {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+/* RESPONSIVT DESIGN TIL DESKTOP (fra 960px og op) */
+@media (min-width: 960px) {
   .site-footer {
     padding: 60px 20px 20px;
     background-color: var(--color-bright, #fff);
