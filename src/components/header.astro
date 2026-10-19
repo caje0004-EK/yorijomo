@@ -6,20 +6,12 @@ import BurgerMenu from "./burgermenu.astro";
 import ShopDropdown from "./ShopDropdown.astro";
 ---
 
-<header class="navbarfixed site-header">
+<header class="navbarfixed site-header fixed">
   <div class="container-full flex justify-between items-center">
-    
     <!-- Venstre side: Navigation -->
     <div class="flex items-center">
       <!-- Burgermenu (synlig på tablet/mobil) -->
-      <button
-        id="burger-menu-toggle"
-        type="button"
-        class="flex flex-col justify-between burger-menu desktop-hide"
-        aria-label="Menu"
-        aria-controls="mobile-overlay"
-        aria-expanded="false"
-      >
+      <button id="burger-menu-toggle" type="button" class="flex flex-col justify-between burger-menu desktop-hide" aria-label="Menu" aria-controls="mobile-overlay" aria-expanded="false">
         <span class="burger-bar"></span>
         <span class="burger-bar"></span>
         <span class="burger-bar"></span>
@@ -37,32 +29,32 @@ import ShopDropdown from "./ShopDropdown.astro";
       </div>
     </div>
 
-    
     <div class="logo">
       <a href="/" class="text-decoration-none">
-        <img class="logo" src="/Logo_Yori_Yomo%20(bihe).svg" alt="Yori Jomo">
+        <img class="logo" src="/Logo_Yori_Yomo%20(bihe).svg" alt="Yori Jomo" />
       </a>
     </div>
 
     <!-- Højre side: Sprog, valuta og ikoner -->
     <div class="flex items-center gap-md">
       <!-- Sprog / Valuta (skjult på tablet/mobil) -->
-      <div class="flex gap-sm tablet-hide">
-        <span class="flex items-center gap-lg">
+      <div class="flex gap-sm tablet-hide mobile-selectors">
+        <button type="button" class="selector-btn">
           <span>DK</span>
-        </span>
-        <span class="gap-lg">
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"></path></svg>
+        </button>
+        <button type="button" class="selector-btn">
           <span>DKK</span>
-        </span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.2"></path></svg>
+        </button>
       </div>
 
       <!-- Ikoner (Søg & Kurv - altid synlige) -->
       <div class="flex gap-sm">
-        <img src="/search-icon.svg" alt="Søg">
-        <img src="/shopping-bag.svg" alt="Kurv">
+        <img src="/search-icon.svg" alt="Søg" />
+        <img src="/shopping-bag.svg" alt="Kurv" />
       </div>
     </div>
-
   </div>
 </header>
 <BurgerMenu />
@@ -97,68 +89,87 @@ import ShopDropdown from "./ShopDropdown.astro";
 </script>
 
 <style>
-.logo.svg-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-
-.burger-menu {
-  width: 24px;
-  height: 16px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.burger-bar {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-dark, #000);
-}
-
-/* Dropdown hover container */
-.dropdown-parent {
-  position: relative;
-  padding-bottom: 20px;
-  margin-bottom: -20px;
-}
-
-/* Viser ShopDropdown komponenten ved hover */
-.dropdown-parent:hover :global(.mega-dropdown) {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.site-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: transparent; 
-  transition: background-color 0.25s ease;
-}
-
-/* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
-.site-header:has(.dropdown-parent:hover) {
-  background-color: #ffffff;
-}
-
-
-@media (max-width: 959px) {
-  .tablet-hide {
-    display: none !important;
+  header {
+    padding: 0 2rem;
+    top: 0;
+    z-index: 100;
   }
-}
-
-@media (min-width: 960px) {
-  .desktop-hide {
-    display: none !important;
+  .logo.svg-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
-}
+
+  .burger-menu {
+    width: 24px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .burger-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-dark, #000);
+  }
+
+  /* Dropdown hover container */
+  .dropdown-parent {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+  }
+
+  /* Viser ShopDropdown komponenten ved hover */
+  .dropdown-parent:hover :global(.mega-dropdown) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .site-header {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.25s ease;
+  }
+  .mobile-selectors {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+  }
+
+  .selector-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  /* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
+  .site-header:has(.dropdown-parent:hover) {
+    background-color: #ffffff;
+  }
+
+  @media (max-width: 959px) {
+    .tablet-hide {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .desktop-hide {
+      display: none !important;
+    }
+  }
 </style>
