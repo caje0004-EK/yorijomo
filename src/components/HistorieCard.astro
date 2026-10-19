@@ -71,29 +71,30 @@ import ButtonPrimary from "./ButtonPrimary.astro";
 
   .Image-right {
     display: none;
+    position: relative;
+    top: 60px;
   }
 
   .slide-top {
-  opacity: 0;
-  transform: translateY(100px);
-}
-
-.slide-top.is-visible {
-  animation: slide-top 0.7s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes slide-top {
-  0% {
     opacity: 0;
     transform: translateY(100px);
   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .slide-top.is-visible {
+    animation: slide-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
-}
+
+  @keyframes slide-top {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   @media (min-width: 601px) {
     .Historie-section {
@@ -147,7 +148,6 @@ import ButtonPrimary from "./ButtonPrimary.astro";
   }
 </style>
 
-
 <script>
   const animatedElements = document.querySelectorAll(".Historie-section.slide-top");
 
@@ -162,7 +162,7 @@ import ButtonPrimary from "./ButtonPrimary.astro";
     },
     {
       threshold: 0.15,
-    }
+    },
   );
 
   animatedElements.forEach((element) => {

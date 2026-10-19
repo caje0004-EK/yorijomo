@@ -43,6 +43,20 @@ import ButtonPrimary from "./ButtonPrimary.astro";
 </script>
 
 <style>
+  .logo {
+    min-width: 400px;
+  }
+  @media (min-width: 1000px) {
+    .logo {
+      min-width: 800px;
+    }
+  }
+  @media (min-width: 600px) {
+    .logo {
+      min-width: 600px;
+    }
+  }
+
   .hero-carousel {
     position: relative;
     width: 100%;
