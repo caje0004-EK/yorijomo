@@ -4,11 +4,23 @@ import Hero from "../components/hero.astro";
 import ProductGrid from "../components/ProductGrid.astro";
 import HistorieCard from "../components/HistorieCard.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
+import "../styles/custom.css";
+import "../styles/struktur.css";
 ---
 
 <PageLayout heading="Yori Jomo">
-  <Hero />
-  <ProductGrid />
-  <HistorieCard />
-  <CategoryGrid />
+    <Hero />
+    <div class="home-sections gap-xxl">
+    <ProductGrid />
+    <HistorieCard />
+    <CategoryGrid />
+  </div>
 </PageLayout>
+
+<style>
+  .home-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 140px;
+  }
+</style>

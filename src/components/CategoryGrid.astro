@@ -12,6 +12,10 @@ import CategoryCard from "./CategoryCard.astro";
 </div>
 
 <style>
+
+  .category{
+   padding-bottom: 20px;
+  }
   .category-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -78,17 +82,14 @@ import CategoryCard from "./CategoryCard.astro";
 
 
 <script>
-  const animatedElements = document.querySelectorAll(".slide-top");
+  const animatedElements = document.querySelectorAll(".category.slide-top");
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Start animationen
           entry.target.classList.add("is-visible");
-        } else {
-          // Nulstil animationen, når elementet forlader skærmen
-          entry.target.classList.remove("is-visible");
+          observer.unobserve(entry.target);
         }
       });
     },
