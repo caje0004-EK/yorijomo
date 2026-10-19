@@ -1,5 +1,6 @@
 ---
 // HeroCarousel.astro
+import ButtonPrimary from "./ButtonPrimary.astro";
 ---
 
 <section class="hero-carousel">
@@ -13,11 +14,12 @@
   <!-- Mørkt/tonet overlay for bedre læsbarhed af tekst -->
   <div class="hero-overlay"></div>
 
-
   <div class="hero-content">
-    <img class="logo" src="/Logo_Yori_Yomo%20(bihe).svg" alt="Yori Jomo">
+    <img class="logo" src="/Logo_Yori_Yomo%20(bihe).svg" alt="Yori Jomo" />
     <h1 class="hero-subtitle">EFTERÅRSKOLLEKTION UDE NU</h1>
-    <a href="/shop">SHOP KOLLEKTION</a>
+    <div class="Button">
+      <ButtonPrimary text="SHOP KOLLEKTION" href="/" />
+    </div>
   </div>
 </section>
 
@@ -41,78 +43,74 @@
 </script>
 
 <style>
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Fyld hele skærmens højde */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: #000;
-}
+  .hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Fyld hele skærmens højde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+  }
 
-/* Baggrunds-slides container */
-.hero-slides {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
+  /* Baggrunds-slides container */
+  .hero-slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0; /* Sørg for at alle som udgangspunkt er usynlige */
-  transition: opacity 1.2s ease-in-out; /* Blød overgang */
-}
+  .hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Sørg for at alle som udgangspunkt er usynlige */
+    transition: opacity 1.2s ease-in-out; /* Blød overgang */
+  }
 
-.hero-slide.active {
-  opacity: 1; /* Kun den aktive slide vises fuldt igennem */
-}
+  .hero-slide.active {
+    opacity: 1; /* Kun den aktive slide vises fuldt igennem */
+  }
 
-/* Overlay til at dæmpe billederne en anelse */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); 
-  z-index: 2;
-}
+  /* Overlay til at dæmpe billederne en anelse */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
 
-/* Indhold placeret ovenpå karussellen */
-.hero-content {
-  font-family: var(--font-family-regular);
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  padding: 0 20px;
-  gap: 16px;
-}
+  /* Indhold placeret ovenpå karussellen */
+  .hero-content {
+    font-family: var(--font-family-regular);
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    gap: 16px;
+  }
 
-
-.hero-subtitle {
-  font-family: var(--font-family-headline);
-  color: #000;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  letter-spacing: 0.1em;
-  margin: 0;
-  font-weight: 400;
-
-  
-}
-
+  .hero-subtitle {
+    font-family: var(--font-family-headline);
+    color: #000;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    letter-spacing: 0.1em;
+    margin: 0;
+    font-weight: 400;
+  }
 </style>
