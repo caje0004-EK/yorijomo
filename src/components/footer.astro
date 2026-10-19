@@ -5,7 +5,7 @@
 <footer class="site-footer">
   <div class="container-full footer-inner">
     
-    <!-- Billede / Instagram sektion (Ligger øverst på mobil/tablet, til højre på desktop) -->
+   
     <div class="footer-image-col">
       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-link">
         <img src="/footer-photo.jpg" alt="Følg med på Instagram" class="footer-img" />
@@ -13,10 +13,10 @@
       </a>
     </div>
 
-    <!-- Indholds-sektion (Nyhedsbrev & Links) -->
+    <!-- Indholds-sektion -->
     <div class="footer-content-col">
       
-      <!-- Nyhedsbrev -->
+      <!-- Nyhedsbrev section-->
       <div class="newsletter-section">
         <h2 class="footer-title">TILMELD NYHEDSBREV</h2>
         <p class="newsletter-desc">Få eksklusive tilbud og tidlig adgang til nye produkter.</p>
@@ -27,10 +27,10 @@
         </form>
       </div>
 
-      <!-- Navigation & Links Grid (Bruger struktur.css grid) -->
+      <!-- Navigation & Links section-->
       <div class="grid m-zero">
         
-        <!-- SHOP -->
+        <!-- SHOP section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">SHOP</h3>
           <ul class="footer-list">
@@ -41,7 +41,7 @@
           </ul>
         </div>
 
-        <!-- YORI JOMO -->
+        <!-- YORI JOMO section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">YORI JOMO</h3>
           <ul class="footer-list">
@@ -50,7 +50,7 @@
           </ul>
         </div>
 
-        <!-- KUNDESERVICE -->
+        <!-- KUNDESERVICE section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">KUNDESERVICE</h3>
           <ul class="footer-list">
@@ -63,7 +63,7 @@
           </ul>
         </div>
 
-        <!-- KONTAKT -->
+        <!-- KONTAKT section-->
         <div class="col-12 col-md-3">
           <h3 class="footer-subtitle">KONTAKT</h3>
           <div class="footer-contact-info">
@@ -79,7 +79,7 @@
 
   </div>
 
-  <!-- Copyright bunden -->
+  <!-- Copyright section -->
   <div class="footer-bottom">
     <p>&copy; 2026 Yori Jomo</p>
   </div>
@@ -87,6 +87,7 @@
 
 <style>
 .site-footer {
+  font-family: var(--font-family-regular);
   padding: 60px 20px 20px;
   background-color: var(--color-bright, #fff);
   color: var(--color-dark, #000);
@@ -98,7 +99,7 @@
   gap: 48px;
 }
 
-/* Instagram / Billede kolonne */
+/* Instagram link*/
 .footer-image-col {
   display: flex;
   flex-direction: column;
@@ -121,6 +122,7 @@
 }
 
 .instagram-text {
+  font-family: var(--font-family-headline);
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -143,6 +145,7 @@
 }
 
 .footer-title {
+  font-family: var(--font-family-headline);
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -188,6 +191,7 @@
 
 /* Links & Typografi */
 .footer-subtitle {
+  font-family: var(--font-family-headline);
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.05em;
