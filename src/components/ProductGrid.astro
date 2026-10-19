@@ -56,6 +56,10 @@ const products = [
 </div>
 
 <style>
+
+  .product-section{
+    margin-bottom: 20px;
+  }
   .product-section h1 {
     font-family: var(--font-family-headline);
     font-weight: var(--font-weight-regular);
@@ -141,17 +145,14 @@ const products = [
 
 
 <script>
-  const animatedElements = document.querySelectorAll(".slide-top");
+  const animatedElements = document.querySelectorAll(".product-section.slide-top");
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Start animationen
           entry.target.classList.add("is-visible");
-        } else {
-          // Nulstil animationen, når elementet forlader skærmen
-          entry.target.classList.remove("is-visible");
+          observer.unobserve(entry.target);
         }
       });
     },
