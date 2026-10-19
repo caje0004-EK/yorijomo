@@ -1,0 +1,163 @@
+---
+// Header.astro
+import "../styles/struktur.css";
+import BurgerMenu from "./burgermenu.astro";
+import ShopDropdown from "./ShopDropdown.astro";
+---
+
+<header class="navbarfixed site-header">
+  <div class="container-full flex justify-between items-center">
+    
+    <!-- Venstre side: Navigation -->
+    <div class="flex items-center">
+      <!-- Burgermenu (synlig på tablet/mobil) -->
+      <button
+        id="burger-menu-toggle"
+        type="button"
+        class="flex flex-col justify-between burger-menu desktop-hide"
+        aria-label="Menu"
+        aria-controls="mobile-overlay"
+        aria-expanded="false"
+      >
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+
+      <!-- Links (skjult på tablet/mobil) -->
+      <div class="flex gap-lg text-decoration-none tablet-hide">
+        <!-- Shop link med Dropdown Container -->
+        <div class="dropdown-parent">
+          <a href="/shop" class="text-decoration-none">Shop</a>
+          <ShopDropdown />
+        </div>
+        <a href="/forhandlere" class="text-decoration-none">Forhandlere</a>
+        <a href="/om-os" class="text-decoration-none">Om os</a>
+      </div>
+    </div>
+
+    <!-- Midten: Logo -->
+    <div class="logo">
+      <a href="/" class="text-decoration-none">
+        <img class="logo" src="/Logo_Yori_Yomo%20(bihe).svg" alt="Yori Jomo">
+      </a>
+    </div>
+
+    <!-- Højre side: Sprog, valuta og ikoner -->
+    <div class="flex items-center gap-md">
+      <!-- Sprog / Valuta (skjult på tablet/mobil) -->
+      <div class="flex gap-sm tablet-hide">
+        <span class="flex items-center gap-lg">
+          <span>DK</span>
+        </span>
+        <span class="gap-lg">
+          <span>DKK</span>
+        </span>
+      </div>
+
+      <!-- Ikoner (Søg & Kurv - altid synlige) -->
+      <div class="flex gap-sm">
+        <img src="/search-icon.svg" alt="Søg">
+        <img src="/shopping-bag.svg" alt="Kurv">
+      </div>
+    </div>
+
+  </div>
+</header>
+<BurgerMenu />
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("#burger-menu-toggle");
+  const menu = document.querySelector<HTMLElement>("#mobile-overlay");
+
+  if (toggle && menu) {
+    const closeMenu = () => {
+      menu.classList.remove("is-active");
+      toggle.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("is-active");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      menu.setAttribute("aria-hidden", String(!isOpen));
+    });
+
+    menu.addEventListener("click", (event) => {
+      if (event.target === menu || (event.target instanceof Element && event.target.closest("a"))) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
+</script>
+
+<style>
+.logo.svg-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Burgermenu knap styling */
+.burger-menu {
+  width: 24px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-dark, #000);
+}
+
+/* Dropdown hover container */
+.dropdown-parent {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+/* Viser ShopDropdown komponenten ved hover */
+.dropdown-parent:hover :global(.mega-dropdown) {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent; /* Gennemsigtig som standard */
+  transition: background-color 0.25s ease;
+}
+
+/* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
+.site-header:has(.dropdown-parent:hover) {
+  background-color: #ffffff;
+}
+
+/* Responsiv styring baseret på jeres md-breakpoint (960px) */
+@media (max-width: 959px) {
+  .tablet-hide {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .desktop-hide {
+    display: none !important;
+  }
+}
+</style>
