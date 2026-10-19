@@ -4,7 +4,6 @@
 
 <div class="mega-dropdown tablet-hide">
   <div class="dropdown-content container-full flex justify-between">
-    
     <!-- Venstre side: Kategori-kolonner -->
     <div class="flex gap-xxl">
       <!-- SKO -->
@@ -33,110 +32,111 @@
     <!-- Højre side: Billeder med links -->
     <div class="flex gap-md">
       <a href="/shop/sko" class="dropdown-card">
-        <img src="/yori-jomo-bench.jpg" alt="Sko">
+        <img src="/yori-jomo-bench.jpg" alt="Sko" />
         <span>SKO</span>
       </a>
       <a href="/shop/accessories/baelter" class="dropdown-card">
-        <img src="/yori-jomo-belt.png" alt="Bælter">
+        <img src="/yori-jomo-belt.png" alt="Bælter" />
         <span>BÆLTER</span>
       </a>
     </div>
-
   </div>
 </div>
 
 <style>
-/* Mega Dropdown Panel Styling */
-.mega-dropdown {
-  font-family: var(--font-family-regular);
-  position: fixed; /* Låser panelet til skærmens fulde bredde i stedet for Shop-linket */
-  top: 60px; /* Tilpas denne højde så den passer med bunden af din header */
-  left: 0;
-  width: 100vw;
-  background-color: var(--color-bright, #fff);
-  padding: 40px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  
-  /* Hover/visnings-logik */
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  z-index: 1000;
-}
+  /* Mega Dropdown Panel Styling */
+  .mega-dropdown {
+    font-family: var(--font-family-regular);
+    position: fixed; /* Låser panelet til skærmens fulde bredde i stedet for Shop-linket */
+    top: 50px; /* Tilpas denne højde så den passer med bunden af din header */
+    left: 0;
+    width: 100vw;
+    background-color: var(--base-white);
+    padding: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
-/* Typografi & Link Styling */
-.dropdown-title {
-  font-family: var(--font-family-headline);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
+    /* Hover/visnings-logik */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+    z-index: 1000;
+  }
 
-.dropdown-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  /* Typografi & Link Styling */
+  .dropdown-title {
+    font-family: var(--font-family-headline);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
 
-.dropdown-links a {
-  color: #555;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 300;
-  transition: color 0.2s ease;
-}
+  .dropdown-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-.dropdown-links a:hover {
-  color: #000;
-}
+  .dropdown-links a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 300;
+    transition: color 0.2s ease;
+  }
 
-/* Billedkort i højre side */
-.dropdown-card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-  width: 200px;
-}
+  .dropdown-links a:hover {
+    color: #000;
+  }
 
-.dropdown-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
+  /* Billedkort i højre side */
+  .dropdown-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    width: 200px;
+  }
 
-.dropdown-card span {
-  font-family: var(--font-family-headline);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+  .dropdown-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
 
-.dropdown-content {
-  padding-left: var(--space-xl, 32px); 
-  padding-right: var(--space-xl, 32px);
-}
+  .dropdown-card span {
+    font-family: var(--font-family-headline);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
-.site-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: transparent; /* Gennemsigtig som standard */
-  transition: background-color 0.25s ease;
-}
+  .dropdown-content {
+    padding-left: var(--space-xl, 32px);
+    padding-right: var(--space-xl, 32px);
+  }
 
-/* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
-.site-header:has(.dropdown-parent:hover) {
-  background-color: #ffffff;
-}
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* Gennemsigtig som standard */
+    transition: background-color 0.25s ease;
+  }
+
+  /* Gør hele headeren hvid, når man hoover på Shop / dropdown-parent */
+  .site-header:has(.dropdown-parent:hover) {
+    background-color: #ffffff;
+  }
 </style>
